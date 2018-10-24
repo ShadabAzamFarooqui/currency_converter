@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/black_border" android:state_pressed="false"></item>
+    <item android:drawable="@drawable/black_border_with_bc"></item>
+
+</selector>

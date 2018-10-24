@@ -1,0 +1,403 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF"
+    tools:context=".activity.MainActivity">
+
+    <ProgressBar
+        android:id="@+id/progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_gravity="center" />
+
+    <TextView
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="4dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:text="Enter Conversion Amount" />
+
+    <TextView
+        android:id="@+id/edit_amount"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="4dp"
+        android:hint="Enter Amount"
+        android:textColor="#000"
+        android:textSize="@dimen/otherInputTextSize"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:inputType="numberDecimal" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@color/colorAccent"/>
+
+
+
+
+    <!-- <TextView android:layout_width="match_parent"
+               android:layout_marginTop="8dp"
+               android:layout_height="wrap_content"
+               style="?android:attr/listSeparatorTextViewStyle"
+               android:text="Choose A Currency"/>
+ -->
+
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:hint="Converted Amount"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="From (Currency) *"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/textview_bg"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/from_currency"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@android:color/transparent"
+            android:hint="Select Currency"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="To (Currency) *"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:textSize="15sp" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/textview_bg"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/to_currency"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@android:color/transparent"
+            android:hint="Select Currency"
+            android:textColor="#000"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:visibility="gone"
+       android:layout_height="wrap_content">
+       <Button
+           android:id="@+id/btn_convert"
+           android:layout_width="0dp"
+           android:layout_weight="1"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="0dp"
+           android:layout_gravity="center"
+           android:layout_marginLeft="13dp"
+           android:layout_marginRight="13dp"
+           android:text="Convert" />
+   </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="3dp"
+        android:background="#FFF"
+        android:layout_marginTop="10dp"
+        android:paddingRight="3dp"
+        android:orientation="vertical">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+
+            android:background="@color/colorPrimary"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/clear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="CLEAR"
+                android:textColor="#000"
+                android:textSize="@dimen/gst_text_size" />
+            <TextView
+                android:id="@+id/del"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="DEL"
+                android:textColor="#000"
+                android:textSize="@dimen/gst_text_size" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/seven"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="7"
+                android:textColor="#000"
+                android:textSize="@dimen/numberTextSize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/eight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="8"
+                android:textColor="#000"
+                android:textSize="@dimen/numberTextSize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nine"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="9"
+                android:textColor="#000"
+                android:textSize="@dimen/numberTextSize"
+                android:textStyle="bold" />
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/four"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="#000"
+                android:textSize="@dimen/numberTextSize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/five"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="#000"
+                android:textSize="@dimen/numberTextSize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/six"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="#000"
+                android:textSize="@dimen/numberTextSize"
+                android:textStyle="bold" />
+
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/one"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#000"
+                android:textSize="@dimen/numberTextSize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/two"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="#000"
+                android:textSize="@dimen/numberTextSize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/three"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="#000"
+                android:textSize="@dimen/numberTextSize"
+                android:textStyle="bold" />
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/zero"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="#000"
+                android:textSize="@dimen/numberTextSize"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/point"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/selector"
+                android:gravity="center"
+                android:text="."
+                android:textColor="#000"
+                android:textSize="@dimen/numberTextSize"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <!--<SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/search_filter"
+            android:iconifiedByDefault="false"
+            android:queryHint="Filter Currencies"/>
+
+
+    <ListView
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:id="@+id/list_currencies"
+            android:drawSelectorOnTop="true"
+            android:fadeScrollbars="false"
+            android:layout_height="wrap_content"/>
+-->
+
+</LinearLayout>

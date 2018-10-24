@@ -1,0 +1,9 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="numberTextSize">25sp</dimen>
+    <dimen name="otherInputTextSize">20sp</dimen>
+    <dimen name="gst_text_size">16sp</dimen>
+    <dimen name="duration">200</dimen>
+</resources>
